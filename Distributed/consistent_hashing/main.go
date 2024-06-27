@@ -2,7 +2,6 @@ package main
 
 import (
 	"blog-example/Distributed/consistent_hashing/chash"
-	"blog-example/Distributed/consistent_hashing/hash"
 	"blog-example/Distributed/consistent_hashing/kv_system"
 	"fmt"
 	"math/rand"
@@ -11,8 +10,8 @@ import (
 
 func main() {
 
-	hash := hash.NewKVSystem(3, nil)
-	runKvSystem(hash)
+	//hash := hash.NewKVSystem(3, nil)
+	//runKvSystem(hash)
 	cHash := chash.NewKVSystem(3)
 	runKvSystem(cHash)
 }

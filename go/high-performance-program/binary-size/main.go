@@ -20,7 +20,7 @@ func main() {
 }
 
 /**
-➜  binary-size git:(main) ✗ go build -ldflags="-s -w"  -o server main.go && upx --brute server && ls -lh server
+➜  binary-size git:(main) ✗ go build -ldflags="-s -w"  -o server escape_test.go && upx --brute server && ls -lh server
                        Ultimate Packer for eXecutables
                           Copyright (C) 1996 - 2023
 UPX 4.1.0       Markus Oberhumer, Laszlo Molnar & John Reiser    Aug 8th 2023
@@ -33,6 +33,6 @@ Packed 1 file.
 -rwxr-xr-x  1 hxzhouh  staff   1.4M Jul  2 14:54 server
 
 ----
-➜  binary-size git:(main) ✗ go build  -o server main.go  && ls -lh server
+➜  binary-size git:(main) ✗ go build  -o server escape_test.go  && ls -lh server
 -rwxr-xr-x  1 hxzhouh  staff   6.5M Jul  2 16:43 server
 */

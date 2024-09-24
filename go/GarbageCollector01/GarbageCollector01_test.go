@@ -1,4 +1,4 @@
-package GarbageCollector01
+package main
 
 import (
 	"os"
@@ -20,7 +20,6 @@ func BenchmarkAllocationEveryMs(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		tmp := make([]int, 10000, 10000)
 		a = &tmp
-
 		time.Sleep(time.Millisecond)
 	}
 	_ = a

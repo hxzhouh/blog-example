@@ -20,6 +20,3 @@
 
 # Go workspace file
 go.work
-
-
-!/go/go_trace /main

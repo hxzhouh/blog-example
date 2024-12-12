@@ -15,7 +15,7 @@ const (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run main.go <file_path>")
+		fmt.Println("Usage: go run point_test.go <file_path>")
 		os.Exit(1)
 	}
 

@@ -24,7 +24,7 @@ func NewTokenBucket(capacity int, refillRate int, interval time.Duration) *Token
 	return tl
 }
 
-// Allow 方法用于判断当前请求是否被允许。
+// Allow checks if the token bucket allows a request.
 func (t *TokenBucket) Allow() bool {
 	select {
 	case <-t.capacity:

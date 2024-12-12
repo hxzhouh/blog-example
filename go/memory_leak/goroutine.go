@@ -1,20 +1,28 @@
 package main
 
 import (
-	"log"
-	"net/http"
+	"fmt"
 	"time"
 )
 
-func main() {
+func Example() {
+	a := 1
+	c := make(chan error)
+	defer close(c)
 	go func() {
-		log.Println(http.ListenAndServe("localhost:6060", nil))
+		var err error
+		c <- err
+		return
 	}()
-	time.Sleep(1 * time.Second)
-	for {
-		go func() {
-			time.Sleep(1 * time.Hour)
-		}()
-		time.Sleep(50 * time.Millisecond)
+	// Example exits here, causing a goroutine leak.
+	if a > 0 {
+		return
 	}
+	err := <-c
+	fmt.Println(err)
+}
+
+func main() {
+	Example()
+	time.Sleep(1 * time.Second)
 }

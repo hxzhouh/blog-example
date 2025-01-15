@@ -1,0 +1,7 @@
+goos: darwin
+goarch: arm64
+pkg: blog-example/go/benchmark
+BenchmarkSoftNums-10    	1000000000	         0.3162 ns/op
+BenchmarkSoftNums-10    	1000000000	         0.3132 ns/op
+BenchmarkSoftNums-10    	1000000000	         0.3256 ns/op
+BenchmarkSoftNums-10    	

@@ -1,0 +1,15 @@
+linters:
+  disable-all: true
+  enable:
+    - govet
+  fast: false
+
+linters-settings:
+  govet:
+    # report about shadowed variables
+    check-shadowing: false
+    fast: false
+    # disable:
+    #  - fieldalignment # I'm ok to waste some bytes
+    enable:
+      - fieldalignment

@@ -2,6 +2,7 @@ package main
 
 import (
 	"testing"
+	"weak"
 )
 
 //type User struct {
@@ -16,6 +17,7 @@ import (
 
 var pointMap map[int]*int
 var noPointMap map[int]int
+var weakMap map[weak.Pointer[int]]int
 
 func BenchmarkPointMap(b *testing.B) {
 	pointMap = make(map[int]*int)
@@ -39,5 +41,13 @@ func BenchmarkNoPointMap(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		delete(noPointMap, i)
 		noPointMap[i] = i
+	}
+}
+
+func BenchmarkWeakMap(b *testing.B) {
+	weakMap = make(map[weak.Pointer[int]]int)
+	for i := 0; i < 10e6; i++ {
+		kw := weak.Make(&i)
+		noPointMap[kw] = i
 	}
 }
